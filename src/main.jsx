@@ -1,6 +1,6 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import './index.css'
+import './pages/Theme.css'
 import Footer from './pages/Footer.jsx'
 import Navbar from './pages/Navbar.jsx'
 import Forms from './pages/Forms.jsx'
@@ -8,6 +8,18 @@ import Forms from './pages/Forms.jsx'
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <Navbar />
-    <Footer />
+    <div className="Main_app">
+      <div className="App-content">
+        <nav>Уважаемые дамы и господа, мы рады приветствовать Вас и благодарны Вам за то, что Вы нашли время посетить наш сайт!</nav>
+        <nav>Дачный поселок «Заповедное» расположен в живописном, экологически чистом месте...</nav>
+        <nav>Все дома в поселке возводятся из экологически чистых материалов...</nav>
+        <nav>Приобретая участок и заказывая дом в ДПК «Заповедное» Вы инвестируете капитал...</nav>
+        <nav>Наша компания строит дома и бани, используя материалы...</nav>
+      <nav>Рядом с поселком расположен населенный пункт, город Струнино с развитой инфраструктурой (супермаркеты, детские сады, школы, рестораны, поликлиника, больница и т.д.).</nav>
+      <nav>Мы гарантируем качество, юридическую чистоту сделки и строгое выполнение всех сроков оформления документации и строительства. Строительство в поселке началось в 2007 году. В настоящее время в поселке проживает более 150 семей!</nav>
+      </div>
+      
+      <Footer />
+    </div>
   </StrictMode>,
-)
+);

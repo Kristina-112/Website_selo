@@ -2,9 +2,9 @@
   text-align: center;
   width: 100%;
   box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.39);
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  }
+  margin-top: 20px; 
+}
+body {
+  margin: 0;
+}
  

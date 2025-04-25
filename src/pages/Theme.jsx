@@ -1,26 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { WiMoonAltFirstQuarter } from "react-icons/wi";
 import './Theme.css';
 
-function Themes() {
-  const [isDarkTheme, setIsDarkTheme] = useState(false);
+function Themes({ toggleTheme, isDarkTheme }) {
+    useEffect(() => {
+        document.body.className = isDarkTheme ? 'dark' : 'light';
+    }, [isDarkTheme]);
 
-  const toggleTheme = () => {
-    setIsDarkTheme(!isDarkTheme);
-  };
-
-  useEffect(() => {
-    document.body.className = isDarkTheme ? 'dark' : 'light';
-  }, [isDarkTheme]);
-
-  return (
-    <div className="App">
-        <button onClick={toggleTheme} style={{ background: 'transparent', border: 'none' }}>
-          <WiMoonAltFirstQuarter style={{ color: isDarkTheme ? '#ffffff' : '#000000', fontSize: '3rem' }}/>
-          
-        </button>
-    </div>
-  );
+    return (
+        <div className="App">
+            <button onClick={toggleTheme} style={{ background: 'transparent', border: 'none' }}>
+                <WiMoonAltFirstQuarter style={{ color: isDarkTheme ? '#ffffff' : '#000000', fontSize: '3rem' }}/>
+            </button>
+        </div>
+    );
 }
 
 export default Themes;
