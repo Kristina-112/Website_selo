@@ -1,4 +1,4 @@
-.navbar{
+.navbar {
     position: fixed;
     left: 0;
     top: 0;
@@ -6,44 +6,94 @@
     align-items: center;
     width: 100%;
     padding: 0 20px;
-    height: auto;
+    height: 60px;
     background-color: #408546;
     box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.25);
     z-index: 1;
     color: #ffffff;
 }
-.navbar_logo{
+
+.navbar_logo {
     font-size: 25px;
     margin-bottom: 3px;
     margin: 0;
     line-height: 1;
-    font-weight: 700px;
+    font-weight: 700;
     color: #ffffff;
     white-space: nowrap;
 }
 
 .navbar_nav {
-    width: 100%;
+    position: fixed;
+    left: -225px;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    width: 220px;
+    height: 100%;
+    border: 2px solid #408546;
+    border-top-right-radius: 16px;
+    border-bottom-right-radius: 16px;
+    box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s linear;
+}
+
+.navbar_nav-active {
+    transform: translateX(100%);
+}
+
+.navbar_nav-list {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding-top: 40px;
+    padding-left: 60px;
+}
+
+.navbar_nav-item {
+    margin: 10px 0;
+    font-size: 20px;
+    color: inherit;
+}
+
+.navbar_menu-button {
+    display: block;
     margin-left: auto;
-    
+    width: 25px;
+    height: 25px;
+    background-color: transparent;
+    padding: 0;
+    border: 0;
+}
+
+/* Темная тема */
+.navbar.dark .navbar_nav {
+    background-color: #3d4d68;
+    color: #ffffff;
+}
+
+/* Светлая тема */
+.navbar.light .navbar_nav {
+    background-color: #fcece1;
+    color: #000000;
 }
 .navbar_nav-list{
     display: flex;
     list-style-type: none;
     flex-wrap: wrap;
 }
-.navbar_nav-item {
-    font-size: 25px;
-    line-height: 1;
-    color: #ffffff;
-}
-.navbar_nav-item:nth-child(n + 2){
-    margin-left: 30px;
-}
-.navbar_menu-button{
-    display: none;
+
+.navbar_contacts {
+    margin-right: 20px;
 }
 
+.navbar_phone,
+.navbar_email {
+    color: inherit;
+    font-size: 17px;
+    line-height: 1.5;
+    white-space: nowrap;
+}
 @media(max-width: 780px){
     .navbar_nav{
         position: fixed;
@@ -99,4 +149,8 @@
         background-color: #3d4d68;
         color: #ffffff;
     }
+    .navbar_contacts {
+        display: none;
+    }
+    
 }

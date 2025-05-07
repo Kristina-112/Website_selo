@@ -14,7 +14,12 @@ export default function Navbar() {
     return (
         <header className={`navbar ${isDarkTheme ? 'dark' : 'light'}`}>
             <span className='navbar_logo'><h2>Дачный поселок «Заповедное»</h2></span>
+            <div className='navbar_right-section'></div>
             <Themes toggleTheme={toggleTheme} isDarkTheme={isDarkTheme} />
+            <nav className='navbar_contacts'>
+            <span className='navbar_phone'>+7 495 724 28 98</span>
+            <span className='navbar_email'>zapovednoe07@mail.ru</span>
+            </nav>
             <nav className={`navbar_nav ${isOpen ? "navbar_nav-active" : ""}`}>
                 <ul className='navbar_nav-list'>
                     <li className="navbar_nav-item">О поселке</li>
@@ -27,7 +32,7 @@ export default function Navbar() {
                 </ul>
             </nav>
             <button className='navbar_menu-button' onClick={() => setOpen(!isOpen)}>
-                <VscMenu style = {{width: '30px', height: '25px'}}/>
+                <VscMenu style={{width: '30px', height: '25px'}}/>
             </button>
         </header>
     );

@@ -1,6 +1,7 @@
 html, body {
   height: 100%;
   margin: 0;
+  padding: 0;
   transition: background-color 0.3s, color 0.3s;
   overflow-x: hidden;
   box-sizing: border-box; 
@@ -64,10 +65,8 @@ nav {
 }
 @media(max-width: 780px){
   .App-content{
+    margin-top: 65px; 
     font-size: 19px;
   }
-  img{
-    margin-top: 110px; 
-    background-color:0 0 4px 4px rgba(0, 0, 0, 0.25);
-  }
 }
+

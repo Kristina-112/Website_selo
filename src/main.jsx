@@ -8,7 +8,6 @@ import Forms from './pages/Forms.jsx'
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <Navbar />
-    <img src = './public/fon.png' width = '100%'></img>
     <div className="Main_app">
       <div className="App-content">
         <nav>Уважаемые дамы и господа, мы рады приветствовать Вас и благодарны Вам за то, что Вы нашли время посетить наш сайт!</nav>
@@ -24,3 +23,4 @@ createRoot(document.getElementById('root')).render(
     </div>
   </StrictMode>,
 );
+
