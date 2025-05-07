@@ -2,12 +2,12 @@ html, body {
   height: 100%;
   margin: 0;
   transition: background-color 0.3s, color 0.3s;
-  overflow-x: hidden; /* Скрыть горизонтальную прокрутку */
-  box-sizing: border-box; /* Учитывать отступы и границы в ширине */
+  overflow-x: hidden;
+  box-sizing: border-box; 
 }
 
 * {
-  box-sizing: inherit; /* Применить box-sizing ко всем элементам */
+  box-sizing: inherit;
 }
 
 body.light {
@@ -49,15 +49,14 @@ button {
 }
 
 .App-content {
-  padding: 40px; 
   text-align: justify; 
   width: 100%; 
   box-sizing: border-box; 
-  font-size: 22px;
+  font-size: 23px;
   flex: 1;
   padding: 10px;
   padding-bottom: 60px;
-  padding-top: 60px; 
+
 }
 
 nav {
@@ -66,5 +65,9 @@ nav {
 @media(max-width: 780px){
   .App-content{
     font-size: 19px;
+  }
+  img{
+    margin-top: 110px; 
+    background-color:0 0 4px 4px rgba(0, 0, 0, 0.25);
   }
 }

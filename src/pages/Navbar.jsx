@@ -27,7 +27,7 @@ export default function Navbar() {
                 </ul>
             </nav>
             <button className='navbar_menu-button' onClick={() => setOpen(!isOpen)}>
-                <VscMenu />
+                <VscMenu style = {{width: '30px', height: '25px'}}/>
             </button>
         </header>
     );
