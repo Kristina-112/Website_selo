@@ -4,6 +4,7 @@ import {BrowserRouter} from 'react-router-dom';
 
 import {ThemeProvider} from '/src/utils/themeContext.jsx'
 import App from './App';
+import Theme from "./utils/Theme.jsx";
 
 const root = createRoot(
     document.getElementById('root')

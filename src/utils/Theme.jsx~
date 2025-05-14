@@ -1,0 +1,13 @@
+import React, { useEffect } from 'react';
+
+function ToggleTheme({ toggleTheme, isDarkTheme }) {
+    useEffect(() => {
+        document.body.className = isDarkTheme ? 'dark' : 'light';
+    }, [isDarkTheme]);
+
+    return (
+        <img className="theme-toggler" onClick={toggleTheme} src={isDarkTheme ? '/src/assets/moon.png' : 'src/assets/sun.png'} alt="Toggle Theme" />
+    );
+}
+
+export default ToggleTheme;

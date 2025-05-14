@@ -1,0 +1,143 @@
+
+.header {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+
+  &_background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    aspect-ratio: 16 / 9;
+  }
+
+  &_title {
+    position: absolute;
+    bottom: 5rem;
+    left: 3rem;
+    font-size: 10rem;
+    font-weight: 300;
+    color: #fff;
+  }
+}
+
+.home-content {
+  position: relative;
+  margin-top: -5rem;
+  padding: 3rem 2rem;
+  border-radius: 1.5rem;
+  background-color: var(--primary-bg);
+  color: var(--privary-bg);
+  z-index: 1;
+
+  h1 {
+    font-size: 3rem;
+    font-weight: normal;
+  }
+
+  h2 {
+    position: relative;
+    width: fit-content;
+    margin: 2rem 0;
+    padding: 1rem 0;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 5px;
+      left: -20px;
+      width: 110%;
+      height: 100%;
+      background-color: #EFB672;
+      border-radius: 50px;
+      z-index: -1;
+    }
+
+    &::after {
+      content: '···············'; // Точки
+      position: absolute;
+      top: 50%;
+      left: 105%;
+      transform: translateY(-50%);
+      font-size: 2rem; // Размер точек
+      color: var(--tertiary); // Цвет точек
+      white-space: nowrap; // Чтобы точки не переносились на новую строку
+    }
+
+  }
+
+  .info-cards {
+    display: flex;
+    gap: 2rem;
+    align-items: stretch;
+    margin: 1rem 0;
+
+  }
+
+  .info-card {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .info-label {
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-align: center;
+    background: #87b9ef;
+    border-radius: 25px;
+    width: fit-content;
+    padding: 0.5rem 1rem;
+  }
+
+
+  .info-text {
+    flex: 1;
+    padding: 1rem;
+    font-size: 1.3rem;
+    border-radius: 1.5rem;
+
+    ul {
+      padding: 1rem 0;
+    }
+
+    li {
+      text-indent: 1rem;
+      list-style-type: none;
+
+      img {
+        height: 1.5rem;
+        margin-right: 0.5rem;
+      }
+    }
+  }
+
+  .info-image {
+    height: 300px;
+    border-radius: 20px;
+  }
+
+  .highlighted {
+    border-radius: 10px;
+    font-weight: bold;
+    background: #F5C45E;
+  }
+
+  .shadow {
+    border-radius: 25px;
+    box-shadow: var(--shadow);
+  }
+
+  .dotted {
+    border: 5px dotted var(--tertiary);
+    border-radius: 25px;
+  }
+
+
+}

@@ -1,0 +1,17 @@
+[data-theme="light"] {
+  --primary-bg: #fff;
+  --primary-text: #000;
+  --secondary: #fdfdfd;
+  --tertiary: #859f3d;
+  --accent: #cc3300;
+  --shadow: 0 0 3px 3px rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="dark"] {
+  --primary-bg: #28282B;
+  --primary-text: #fff;
+  --secondary: #343434;
+  --tertiary: #343F18;
+  --accent: #a32900;
+  --shadow: 0 0 5px 1px rgba(255, 255, 255, 0.15);
+}
