@@ -1,7 +1,0 @@
-@import './general'
-@import '../layout/header'
-@import '../layout/footer'
-@import '../layout/sidebar'
-
-@import '../pages/'
-
