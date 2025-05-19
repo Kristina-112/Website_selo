@@ -452,16 +452,14 @@ a {
   color: inherit;
 }
 
+label {
+  display: inline-block;
+}
+
 hr {
   width: 70vw;
   margin: 30px auto;
   border: medium dotted var(--green);
-}
-
-.bullet-point {
-  height: 1.5rem;
-  margin-right: 0.5rem;
-  vertical-align: middle;
 }
 
 .highlighted {
@@ -482,73 +480,6 @@ hr {
   padding: 1rem;
   border: 5px dotted var(--green);
   border-radius: 25px;
-}
-
-.scroll-top {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  width: 3.5rem;
-  height: 3.5rem;
-  border: none;
-  border-radius: 50%;
-  font-size: 2rem;
-  background-color: var(--green);
-  color: white;
-  cursor: pointer;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.1s ease;
-  z-index: 100;
-}
-.scroll-top:hover {
-  opacity: 1 !important;
-}
-.scroll-top.visible {
-  opacity: 0.5;
-  visibility: visible;
-}
-
-.contents_arrow {
-  height: 1.5rem;
-  margin-left: 2rem;
-  opacity: 0.5;
-  cursor: pointer;
-  transition: opacity 0.3s ease;
-}
-.contents_arrow:hover {
-  opacity: 1;
-}
-
-.navbar {
-  display: flex;
-  align-items: center;
-  padding: 2rem 5rem;
-}
-.navbar_logo {
-  display: flex;
-  align-items: center;
-}
-.navbar_logo img {
-  padding-right: 1.5rem;
-  height: 4rem;
-}
-.navbar_theme {
-  margin-left: auto;
-  margin-right: 2rem;
-  height: 2rem;
-  cursor: pointer;
-  transition: transform 0.5s;
-}
-.navbar_theme:hover {
-  transform: scale(1.05);
-}
-
-.footer {
-  margin-top: auto;
-  padding: 1rem 0;
-  font-size: 0.7rem;
-  text-align: center;
 }
 
 .header {
@@ -586,9 +517,10 @@ hr {
 }
 .container .h1-wrapper {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  position: relative;
 }
-.container .h1-wrapper h1 {
+.container h1 {
   font-size: 3rem;
   font-weight: normal;
 }
@@ -688,14 +620,232 @@ hr {
 }
 .container .info_image {
   max-width: 100%;
+  object-fit: contain;
   border-radius: 20px;
 }
 .container .info_image-label {
   display: flex;
   flex-direction: column;
+  justify-items: center;
   text-align: center;
   font-style: italic;
   font-weight: 500;
+}
+
+.bullet-point {
+  height: 1.5rem;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
+
+.scroll-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 3.5rem;
+  height: 3.5rem;
+  border: none;
+  border-radius: 50%;
+  font-size: 2rem;
+  background-color: var(--green);
+  color: white;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.1s ease;
+  z-index: 100;
+}
+.scroll-top:hover {
+  opacity: 1 !important;
+}
+.scroll-top.visible {
+  opacity: 0.5;
+  visibility: visible;
+}
+
+.contents_arrow {
+  height: 1.5rem;
+  margin-left: 2rem;
+  opacity: 0.5;
+  cursor: pointer;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.contents_arrow:hover {
+  opacity: 1;
+}
+.contents_arrow.rotated {
+  transform: rotate(180deg);
+}
+
+.contents_menu {
+  max-height: 0;
+  padding: 1rem;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+}
+.contents_menu.visible {
+  max-height: 500px;
+  opacity: 1;
+}
+.contents_menu li {
+  margin-bottom: 0.5rem;
+  list-style: none;
+  opacity: 0.8;
+}
+.contents_menu li:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.filter {
+  position: sticky;
+  top: 5rem;
+  display: flex;
+  flex-direction: column;
+  width: 15rem;
+  height: fit-content;
+  padding: 1rem;
+  border-radius: 1.5rem;
+  background-color: var(--shadow);
+}
+.filter_title {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+.filter_categories {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0;
+}
+.filter label {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+  border-radius: 1rem;
+  background-color: var(--bg);
+}
+.filter label input[type=checkbox] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.filter label input[type=checkbox]:checked + .filter_checkbox::after {
+  content: "";
+  width: 0.4rem;
+  height: 0.7rem;
+  border: solid var(--text);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+.filter label .filter_checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.2rem;
+  height: 1.2rem;
+  border: 2px solid var(--text);
+  border-radius: 0.3rem;
+  background: var(--bg);
+}
+
+.documents {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1rem;
+  gap: 1rem;
+}
+.documents .document {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  width: 30vw;
+  padding: 1rem;
+  border-radius: 1.5rem;
+  background-color: var(--shadow);
+}
+.documents .document img {
+  height: 3rem;
+  margin-right: 1rem;
+}
+.documents .document .date {
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+.navbar {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  margin-top: 0.5rem;
+  padding: 1rem 2rem;
+  width: 90%;
+  background: var(--bg);
+  z-index: 1000;
+  border-radius: 1.5rem;
+  box-shadow: 0 0 10px 2px var(--shadow);
+  transition: padding 0.5s ease;
+}
+.navbar h2, .navbar p {
+  transition: font-size 0.2s linear;
+}
+.navbar_logo {
+  display: flex;
+  align-items: center;
+}
+.navbar_logo img {
+  padding-right: 1.5rem;
+  height: 4rem;
+  transition: height 0.3s ease;
+}
+.navbar .nav_items {
+  display: flex;
+  margin-left: 1rem;
+}
+.navbar .nav_item {
+  margin-left: 0.5rem;
+  padding: 0.5rem;
+  white-space: nowrap;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+.navbar .nav_item:hover {
+  opacity: 1;
+}
+.navbar_theme {
+  margin-left: auto;
+  margin-right: 1rem;
+  height: 2rem;
+  cursor: pointer;
+  transition: transform 0.5s;
+}
+.navbar_theme:hover {
+  transform: scale(1.05);
+}
+.navbar.small {
+  padding: 1rem 2.3rem;
+}
+.navbar.small .navbar_logo img {
+  height: 2rem;
+}
+.navbar.small h2 {
+  font-size: 1rem;
+}
+.navbar.small p {
+  font-size: 0.8rem;
+}
+
+.footer {
+  margin-top: auto;
+  padding: 1rem 0;
+  font-size: 0.7rem;
+  text-align: center;
 }
 
 /*# sourceMappingURL=styles.css.map */

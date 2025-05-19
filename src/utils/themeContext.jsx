@@ -4,24 +4,10 @@ import logo from '../assets/house.png';
 
 import sun from '../assets/sun.png';
 import moon from '../assets/moon.png';
-import info_w from '../assets/info-white.png';
-import info_b from '../assets/info-black.png';
-import projects_w from '../assets/projects-white.png';
-import projects_b from '../assets/projects-black.png';
-import plan_w from '../assets/plan-white.png';
-import plan_b from '../assets/plan-black.png';
-import contacts_w from '../assets/contacts-white.png';
-import contacts_b from '../assets/contacts-black.png';
-import gallery_w from '../assets/gallery-white.png';
-import gallery_b from '../assets/gallery-black.png';
-import road_w from '../assets/road-white.png';
-import road_b from '../assets/road-black.png';
-import news_w from '../assets/news-white.png';
-import news_b from '../assets/news-black.png';
-import documents_w from '../assets/documents-white.png';
-import documents_b from '../assets/documents-black.png';
 import arrow_w from '../assets/arrow-white.png';
 import arrow_b from '../assets/arrow-black.png';
+import download_w from '../assets/download-white.png';
+import download_b from '../assets/download-black.png';
 
 import plant from '../assets/home/plant.png';
 import check from '../assets/home/check.png';
@@ -67,27 +53,13 @@ export const images = {
     light: {
         theme: moon,
         arrow: arrow_b,
-        info: info_b,
-        projects: projects_b,
-        plan: plan_b,
-        contacts: contacts_b,
-        road: road_b,
-        gallery: gallery_b,
-        news: news_b,
-        documents: documents_b,
+        download: download_b,
     },
 
     dark: {
         theme: sun,
         arrow: arrow_w,
-        info: info_w,
-        projects: projects_w,
-        plan: plan_w,
-        contacts: contacts_w,
-        road: road_w,
-        gallery: gallery_w,
-        news: news_w,
-        documents: documents_w,
+        download: download_w,
     },
 }
 

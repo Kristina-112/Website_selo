@@ -1,8 +1,46 @@
+import {useState} from "react";
 import {Link} from "react-router-dom";
 import {motion} from "framer-motion";
 import {images} from "../utils/themeContext.jsx";
+import Documents from "../components/Documents.jsx";
 
 const News = () => {
+    const documents = [
+        {
+            title: "Информационное письмо",
+            date: "01.10.2023",
+            path: "/files/informatsionnoye-pismo.pdf",
+            type: "document",
+        },
+        {
+            title: "Правила проживания и внутреннего распорядка в дачном поселке «Заповедное»",
+            date: "01.03.2025",
+            path: "/files/pravila-prozhivaniya-i-vnutrennego-rasporyadka-v-dachnom-posyolke.pdf",
+            type: "document",
+        },
+    ];
+
+    const filters = [
+        {
+            attribute: "all",
+            text: "Показать всё",
+        },
+        {attribute: "document",
+            text: "Документы",
+        },
+        {
+            attribute: "news",
+            text: "Новости",
+        },
+    ]
+
+    const [selectedType, setSelectedType] = useState(["all"]);
+
+    const filteredDocs =
+        selectedType === "all"
+            ? documents
+            : documents.filter((doc) => doc.type === selectedType);
+
     return (
         <div className="news">
             <div className="header">
@@ -17,64 +55,29 @@ const News = () => {
                 transition={{duration: 0.8, ease: "easeOut"}}
                 viewport={{once: false}}
             >
-
                 <h1>ДОКУМЕНТЫ ДЛЯ<br/>
                     ОЗНАКОМЛЕНИЯ
                 </h1>
 
-
-                <div className="d-flex ">
+                <div className="d-flex mt-5">
                     <div className="filter">
-                        <p className="filter_title">сортировать</p>
-
-                        <div className="filter_categories">
-                            <label htmlFor="all">
-                                <input type="checkbox" id="all" name="all" value="all"/>
-                                <div className="filter_checkbox"></div>
-                                Показать всё
+                        {filters.map(({attribute, text}) => (
+                            <label className="radiobutton" htmlFor={attribute} key={attribute}>
+                                <input
+                                    type="radio"
+                                    id={attribute}
+                                    name="filter"
+                                    value={attribute}
+                                    checked={selectedType === attribute}
+                                    onChange={() => setSelectedType(attribute)}
+                                />
+                                <span className="radio-circle"></span>
+                                {text}
                             </label>
-                            <label htmlFor="news">
-                                <input type="checkbox" id="news" name="news" value="news"/>
-                                <div className="filter_checkbox"></div>
-                                Новости
-                            </label>
-                            <label htmlFor="documents">
-                                <input type="checkbox" id="documents" name="documents" value="documents"/>
-                                <div className="filter_checkbox"></div>
-                                Документы
-                            </label>
-                        </div>
+                        ))}
                     </div>
-
-                    <div className="documents">
-                        <div className="document">
-                            <img src={images.static.file}/>
-                            <a href="/files/informatsionnoye-pismo.pdf"/>
-                        </div>
-                        <div className="document">
-                            <img src={images.static.file}/>
-                            <a href="/files/informatsionnoye-pismo.pdf"/>
-                        </div>
-                        <div className="document">
-                            <img src={images.static.file}/>
-                            <a href="/files/informatsionnoye-pismo.pdf"/>
-                        </div>
-                        <div className="document">
-                            <img src={images.static.file}/>
-                            <a href="/files/informatsionnoye-pismo.pdf"/>
-                        </div>
-                        <div className="document">
-                            <img src={images.static.file}/>
-                            <a href="/files/informatsionnoye-pismo.pdf"/>
-                        </div>
-                        <div className="document">
-                            <img src={images.static.file}/>
-                            <a href="/files/informatsionnoye-pismo.pdf"/>
-                        </div>
-                    </div>
+                    <Documents documents={filteredDocs}/>
                 </div>
-
-
             </motion.div>
         </div>
     )
