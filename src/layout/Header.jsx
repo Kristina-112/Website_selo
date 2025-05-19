@@ -1,15 +1,23 @@
-import { useState, useContext } from 'react';
-import { VscMenu } from "react-icons/vsc";
+import {useContext, useEffect, useState} from 'react';
 import {Link} from 'react-router-dom';
-
 import {images, ThemeContext} from '../utils/themeContext.jsx'
 
 export default function Header() {
-    const [isOpen, setOpen] = useState(true);
     const {theme, handleThemeChange} = useContext(ThemeContext);
+    const [scrolled, setScrolled] = useState(false);
+
+    useEffect(() => {
+        const onScroll = () => {
+            setScrolled(window.scrollY > 300);
+        };
+
+        window.addEventListener("scroll", onScroll);
+        return () => window.removeEventListener("scroll", onScroll);
+    }, []);
+
 
     return (
-        <header className="navbar">
+        <header className={`navbar ${scrolled ? "small" : ""}`}>
             <Link to="/" className='navbar_logo'>
                 <img src={images.static.logo} alt="logo"/>
                 <div>
@@ -17,27 +25,35 @@ export default function Header() {
                     <p>дачный посёлок</p>
                 </div>
             </Link>
-            <img className="theme-toggler"
-                 onClick={handleThemeChange}
-                 src={images[theme].theme} alt="Toggle Theme"/>
-            <div className='navbar_contacts'>
-                <span className='navbar_phone'>+7 495 724 28 98</span>
-                <span className='navbar_email'>zapovednoe07@mail.ru</span>
+
+            <div className="nav_items">
+                <Link className="nav_item" to="/">
+                    О нас
+                </Link>
+                <Link className="nav_item" to="">
+                    Проекты домов
+                </Link>
+                <Link className="nav_item" to="">
+                    Ген. план
+                </Link>
+                <Link className="nav_item" to="">
+                    Галерея
+                </Link>
+                <Link className="nav_item" to="/news">
+                    Новости
+                </Link>
+                <Link className="nav_item" to="">
+                    Документы
+                </Link>
             </div>
-            <nav className={`navbar_nav ${isOpen ? "navbar_nav-active" : ""}`}>
-                <ul className='navbar_nav-list'>
-                    <li className="navbar_nav-item">О поселке</li>
-                    <li className="navbar_nav-item">Проекты домов</li>
-                    <li className="navbar_nav-item">Генеральный план</li>
-                    <li className="navbar_nav-item">Презентации</li>
-                    <li className="navbar_nav-item">Контакты</li>
-                    <li className="navbar_nav-item">Схема проезда</li>
-                    <li className="navbar_nav-item">Документы</li>
-                </ul>
-            </nav>
-            {/*<button className='navbar_menu-button' onClick={() => setOpen(!isOpen)}>*/}
-            {/*    <VscMenu style={{width: '30px', height: '25px'}}/>*/}
-            {/*</button>*/}
+
+            <img className="navbar_theme"
+                 onClick={handleThemeChange}
+                 src={images[theme].theme} alt="сменить тему"/>
+            <div className='contacts d-column'>
+                <p>+7 495 724 28 98</p>
+                <p>zapovednoe07@mail.ru</p>
+            </div>
         </header>
     );
 }

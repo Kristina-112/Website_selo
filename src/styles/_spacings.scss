@@ -66,6 +66,7 @@ $spacer-scale: 0.6 !default; // масштаб (каждый шаг — 0.25rem)
 
 .d-flex {
   display: flex;
+  flex-direction: row;
 }
 
 .d-column {
@@ -77,6 +78,25 @@ $spacer-scale: 0.6 !default; // масштаб (каждый шаг — 0.25rem)
   flex-grow: 1;
 }
 
-.overflow-y-auto {
-  overflow-y: auto;
+.ta-center {
+  text-align: center;
 }
+
+.ji-center {
+  justify-items: center;
+}
+
+.js-start {
+  justify-self: start;
+}
+
+.js-end {
+  justify-self: end;
+}
+
+.ai-center {
+  align-items: center;
+}
+
+
+

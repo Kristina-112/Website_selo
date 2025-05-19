@@ -1,91 +1,126 @@
 .navbar {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   align-items: center;
-  width: 100%;
-  padding: 2rem 5rem;
-  //background-image: linear-gradient(to bottom right, var(--secondary), var(--tertiary));
-  //color: #fff;
+  margin-top: 0.5rem;
+  padding: 1rem 2rem;
+  width: 90%;
+  background: var(--bg);
+  z-index: 1000;
+  border-radius: 1.5rem;
+  box-shadow: 0 0 10px 2px var(--shadow);
+  transition: padding 0.5s ease;
+
+  h2, p {
+    transition: font-size 0.2s linear;
+  }
 
   &_logo {
     display: flex;
     align-items: center;
-    white-space: nowrap;
 
     img {
       padding-right: 1.5rem;
       height: 4rem;
-    }
-
-    div {
-      display: flex;
-      flex-direction: column;
+      transition: height 0.3s ease;
     }
   }
 
-  &_contacts {
+  .nav_items {
     display: flex;
-    flex-direction: column;
-  }
-}
-
-.theme-toggler {
-  margin-left: auto;
-  margin-right: 2rem;
-  height: 2rem;
-  cursor: pointer;
-  transition: transform 0.5s;
-
-  &:hover {
-    transform: scale(1.05);
-  }
-}
-
-
-.navbar_menu-button {
-  display: block;
-  width: 25px;
-  height: 25px;
-  background-color: transparent;
-  padding: 0;
-  border: 0;
-  cursor: pointer;
-  transition: transform 0.5s;
-
-  &:hover {
-    transform: scale(1.05);
-  }
-}
-
-
-.navbar_nav {
-  position: fixed;
-  right: 0;
-  top: 4rem;
-  display: flex;
-  flex-direction: column;
-  width: 15rem;
-  height: fit-content;
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
-  background-image: linear-gradient(to bottom, #859F3D, #9EBC8A);
-  transition: transform 0.12s ease-in-out;
-
-  &-active {
-    transform: translateX(100%);
+    margin-left: 1rem;
   }
 
-  &-list {
-    display: flex;
-    flex-direction: column;
+  .nav_item {
+    margin-left: 0.5rem;
+    padding: 0.5rem;
+    white-space: nowrap;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+
+    &:hover {
+      opacity: 1;
+    }
   }
 
-  &-item {
-    margin: 0.8rem 0 0.8rem 0.8rem;
-    font-size: 1.2rem;
-    list-style-type: none;
+  &_theme {
+    margin-left: auto;
+    margin-right: 1rem;
+    height: 2rem;
     cursor: pointer;
+    transition: transform 0.5s;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &.small {
+    padding: 1rem 2.3rem;
+
+    .navbar_logo img {
+      height: 2rem;
+    }
+
+    h2 {
+      font-size: 1rem;
+    }
+
+    p {
+      font-size: 0.8rem;
+    }
   }
 }
+
+
+
+//.navbar_menu-button {
+//  display: block;
+//  width: 25px;
+//  height: 25px;
+//  background-color: transparent;
+//  padding: 0;
+//  border: 0;
+//  cursor: pointer;
+//  transition: transform 0.5s;
+//
+//  &:hover {
+//    transform: scale(1.05);
+//  }
+//}
+//
+//
+//.navbar_nav {
+//  position: fixed;
+//  right: 0;
+//  top: 4rem;
+//  display: flex;
+//  flex-direction: column;
+//  width: 15rem;
+//  height: fit-content;
+//  border-top-left-radius: 10px;
+//  border-bottom-left-radius: 10px;
+//  background-image: linear-gradient(to bottom, #859F3D, #9EBC8A);
+//  transition: transform 0.12s ease-in-out;
+//
+//  &-active {
+//    transform: translateX(100%);
+//  }
+//
+//  &-list {
+//    display: flex;
+//    flex-direction: column;
+//  }
+//
+//  &-item {
+//    margin: 0.8rem 0 0.8rem 0.8rem;
+//    font-size: 1.2rem;
+//    list-style-type: none;
+//    cursor: pointer;
+//  }
+//}
 
 //@media(max-width: 780px) {
 //  .navbar_nav {

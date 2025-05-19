@@ -1,6 +1,6 @@
 import Header from "./Header.jsx";
 import Footer from "./Footer";
-import Sidebar from "./Sidebar";
+import Sidebar from "../temp/Sidebar.jsx";
 
 const PageLayout = ({ content }) => {
     return (
