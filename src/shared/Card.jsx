@@ -1,0 +1,75 @@
+import {motion} from 'framer-motion'
+import {images} from '../utils/themeContext.jsx'
+
+const infoItems = [
+    {key: 'area', label: 'Общая площадь дома', unit: 'м²'},
+    {key: 'floor1', label: 'Площадь 1-го этажа', unit: 'м²'},
+    {key: 'floor2', label: 'Площадь 2-го этажа', unit: 'м²'},
+    {key: 'finish', label: 'Наружная отделка', unit: ''},
+    {key: 'roof', label: 'Материал кровли', unit: ''},
+]
+
+const cardVariants = {
+    rest: {
+        scale: 1,
+        backgroundColor: 'var(--shadow)'      // исходный светлый фон
+    },
+    hover: {
+        scale: 1.02,
+        backgroundColor: '#f0f0f0'      // чуть более тёмный
+    }
+};
+
+export default function Card({house, index, hoveredIndex, setHoveredIndex}) {
+    const isActive = hoveredIndex === index
+
+    return (
+        <motion.div
+            className="card"
+            onMouseEnter={() => setHoveredIndex(index)}
+            onMouseLeave={() => setHoveredIndex(null)}
+            initial="rest"
+            animate={isActive ? 'hover' : 'rest'}
+            variants={cardVariants}
+            transition={{
+                type: 'spring',
+                stiffness: 300,
+                damping: 20,
+            }}
+        >
+            <img
+                className="card__image"
+                src={images.static[house.imageKey]}
+                alt={house.title}
+            />
+            <p className="card__title">{house.title}</p>
+
+            <motion.div
+                className="card__info"
+                initial={{maxHeight: 0 }}
+                animate={isActive ? {maxHeight: 500 } : {maxHeight: 0 }}
+                transition={{
+                    type: 'tween',
+                    duration: 1,
+                    ease: 'easeOut'
+                }}
+            >
+                {infoItems.map(({key, label, unit}) => (
+                    <div className="card__row" key={key}>
+                        <p>{label}</p>
+                        <p>{house[key]}{unit}</p>
+                    </div>
+                ))}
+
+                <a className="card__link">
+                    <img
+                        className="bullet-point"
+                        src={images.static.more}
+                        alt="подробнее"
+                    />
+                    Читать подробнее
+                </a>
+            </motion.div>
+        </motion.div>
+    )
+}

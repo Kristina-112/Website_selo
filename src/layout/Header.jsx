@@ -30,19 +30,16 @@ export default function Header() {
                 <Link className="nav_item" to="/">
                     О нас
                 </Link>
-                <Link className="nav_item" to="">
+                <Link className="nav_item" to="/house-plans">
                     Проекты домов
                 </Link>
-                <Link className="nav_item" to="">
+                <Link className="nav_item" to="/">
                     Ген. план
                 </Link>
                 <Link className="nav_item" to="">
                     Галерея
                 </Link>
                 <Link className="nav_item" to="/news">
-                    Новости
-                </Link>
-                <Link className="nav_item" to="">
                     Документы
                 </Link>
             </div>

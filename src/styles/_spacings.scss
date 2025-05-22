@@ -64,6 +64,7 @@ $spacer-scale: 0.6 !default; // масштаб (каждый шаг — 0.25rem)
   margin-left: auto !important;
 }
 
+// flex
 .d-flex {
   display: flex;
   flex-direction: row;
@@ -78,25 +79,47 @@ $spacer-scale: 0.6 !default; // масштаб (каждый шаг — 0.25rem)
   flex-grow: 1;
 }
 
+// text
 .ta-center {
   text-align: center;
 }
 
+// items
 .ji-center {
   justify-items: center;
-}
-
-.js-start {
-  justify-self: start;
-}
-
-.js-end {
-  justify-self: end;
 }
 
 .ai-center {
   align-items: center;
 }
 
+// self
+.js-start {
+  justify-self: start;
+}
+
+.as-start {
+  align-self: start;
+}
+
+.js-end {
+  justify-self: end;
+}
+
+.as-end {
+  align-self: end;
+}
+
+.js-center {
+  justify-self: center;
+}
+
+.as-center {
+  align-self: center;
+}
+
+.width-100 {
+  width: 100%;
+}
 
 

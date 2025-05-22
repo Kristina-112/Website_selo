@@ -12,6 +12,10 @@ html, body {
   height: 100%;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Inter", sans-serif;
   background-color: var(--bg);
@@ -36,34 +40,10 @@ label {
 }
 
 hr {
-  width: 70vw;
+  width: 80ch;
   margin: 30px auto;
   border: medium dotted var(--green);
 }
-
-// styles
-.highlighted {
-  padding: 2px;
-  border-radius: 10px;
-  font-weight: bold;
-  background: var(--highlight-text);
-}
-
-.shadowed {
-  flex-grow: 1;
-  padding: 1rem;
-  border-radius: 25px;
-  background: var(--shadow);
-}
-
-.dotted {
-  padding: 1rem;
-  border: 5px dotted var(--green);
-  border-radius: 25px;
-}
-
-
-
 
 // ???
 //@media(max-width: 780px) {

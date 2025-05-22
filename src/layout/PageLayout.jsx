@@ -1,12 +1,13 @@
 import Header from "./Header.jsx";
 import Footer from "./Footer";
-import Sidebar from "../temp/Sidebar.jsx";
+import ScrollTopButton from "../shared/ScrollTopButton.jsx";
 
 const PageLayout = ({ content }) => {
     return (
         <div style={{display: 'flex', flexDirection: 'column'}}>
             <Header />
             {content}
+            <ScrollTopButton/>
             <Footer/>
         </div>
     );
