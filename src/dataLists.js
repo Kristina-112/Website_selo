@@ -131,67 +131,84 @@ const documents = [
  * 3. Добавьте новый объект в images -> icons-static.
  * 4. Создайте новый объект { title, path, area, floor1, floor2, finish, roof } в этом массиве.
  */
+
+import * as Galich76 from "./pages/house-plans/houses/Galich76.jsx";
+import * as Zodchiy61 from "./pages/house-plans/houses/Zodchiy61.jsx";
+import * as Rublevka59 from "./pages/house-plans/houses/Rublevka59.jsx";
+import * as Kostroma53 from "./pages/house-plans/houses/Kostroma53.jsx";
+import * as Moskva51 from "./pages/house-plans/houses/Moskva51.jsx";
+import * as Noginsk57 from "./pages/house-plans/houses/Noginsk57.jsx";
+import * as Kd001 from "./pages/house-plans/houses/Kd001.jsx";
+import * as Kd003 from "./pages/house-plans/houses/Kd003.jsx";
+
 const houses = [
     {
+        slug: "galich-76",
         title: "Галич №76",
-        imageKey: "galich76",
-        area: "135",
-        floor1: "",
-        floor2: "",
-
+        imageKeys: { photoKey: "galich76", plan1Key: "galich76_plan1", plan2Key: "galich76_plan2",},
+        price: "2 450 000",
+        area: { acres: "15", total: "135", floor1: "", floor2: "" },
+        content: Galich76.BasicSet
     },
     {
+        slug: "zodchiy-61",
         title: "Зодчий №61",
-        imageKey: "zodchiy61",
-        area: "144",
-        floor1: "",
-        floor2: "",
+        imageKeys: { photoKey: "zodchiy61", plan1Key: "zodchiy61_plan1", plan2Key: "zodchiy61_plan2" },
+        price: "2 050 000",
+        area: { acres: "15", total: "144", floor1: "", floor2: "" },
+        content: Zodchiy61.BasicSet
     },
     {
+        slug: "rublevka-59",
         title: "Рублевка №59",
-        imageKey: "rublevka59",
-        area: "192",
-        floor1: "",
-        floor2: "",
+        imageKeys: { photoKey: "rublevka59", plan1Key: "rublevka59_plan1", plan2Key: "rublevka59_plan2" },
+        price: "2 100 000",
+        area: {acres: "15", total: "192", floor1: "", floor2: "" },
+        content: Rublevka59.BasicSet
     },
     {
+        slug: "moskva-51",
         title: "Москва №51",
-        imageKey: "moskva51",
-        area: "160",
-        floor1: "",
-        floor2: "",
+        imageKeys: { photoKey: "moskva51", plan1Key: "moskva51_plan1", plan2Key: "moskva51_plan2"},
+        price: "2 400 000",
+        area: { acres: "15", total: "160", floor1: "", floor2: "" },
+        content: Moskva51.BasicSet
     },
     {
+        slug: "kostroma-53",
         title: "Кострома №53",
-        imageKey: "kostroma53",
-        area: "162",
-        floor1: "",
-        floor2: "",
+        imageKeys: { photoKey: "kostroma53", plan1Key: "kostroma53_plan1", plan2Key: "kostroma53_plan2" },
+        price: "2 400 000",
+        area: { acres: "15", total: "162", floor1: "", floor2: "" },
+        content: Kostroma53.BasicSet
     },
     {
+        slug: "noginsk-57",
         title: "Ногинск №57",
-        imageKey: "noginsk57",
-        area: "108",
-        floor1: "",
-        floor2: "",
+        imageKeys: { photoKey: "noginsk57", plan1Key: "noginsk57_plan1", plan2Key: "noginsk57_plan2" },
+        price: "1 950 000",
+        area: { acres: "15", total: "108", floor: "", floor2: "" },
+        content: Noginsk57.BasicSet,
     },
     {
+        slug: "kd-001",
         title: "КД 001",
-        imageKey: "kd001",
-        area: "178,4",
-        floor1: "104",
-        floor2: "72,4",
+        imageKeys: { photoKey: "kd001", plan1Key: "kd001_plan1", plan2Key: "kd001_plan2" },
+        price: "",
+        area: { acres: "", total: "178,4", floor1: "104", floor2: "72,4" },
         finish: "Клееный брус",
         roof: "Shinglas",
+        content: Kd001.BasicSet
     },
     {
+        slug: "kd-003",
         title: "КД 003",
-        imageKey: "kd003",
-        area: "142",
-        floor1: "79,2",
-        floor2: "63",
+        imageKeys: { photoKey: "kd003", plan1Key: "kd003_plan1", plan2Key: "kd003_plan2" },
+        price: "",
+        area: { acres: "", total: "142", floor1: "79,2", floor2: "63" },
         finish: "Комбинированная (газобетон + клееный брус)",
         roof: "Shinglas",
+        content: Kd003.BasicSet
     }
 ]
 

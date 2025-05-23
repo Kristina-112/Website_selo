@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
-import PageWrapper from "../shared/page-components/PageWrapper.jsx";
-import Card from "../shared/Card.jsx";
-import {houses} from '../dataLists'
+import PageWrapper from "../../shared/page-components/PageWrapper.jsx";
+import Card from "../../shared/Card.jsx";
+import {houses} from '../../dataLists.js'
 
 const HousePlans = () => {
     const [hoveredIndex, setHoveredIndex] = useState(null)
@@ -32,9 +32,6 @@ const HousePlans = () => {
             </div>
             <hr/>
         </PageWrapper>
-
-
-
     )
 };
 

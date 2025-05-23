@@ -45,6 +45,10 @@ hr {
   border: medium dotted var(--green);
 }
 
+li {
+  list-style: none;
+}
+
 // ???
 //@media(max-width: 780px) {
 //  .App-content {

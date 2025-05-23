@@ -1,6 +1,6 @@
 .cards {
   display: flex;
-  //padding-bottom: 200px;
+  justify-content: center;
 
   &__column {
     display: flex;
@@ -15,6 +15,7 @@
     padding: 1rem;
     border-radius: 1.5rem;
     background-color: var(--shadow);
+    cursor: pointer;
 
     &__image {
       width: 100%;
@@ -30,6 +31,16 @@
       border-radius: 1rem;
       font-size: 1.1rem;
       font-weight: 600;
+
+    }
+
+    [data-theme="dark"] &__title {
+      background-color: var(--bg);
+
+    }
+
+    /* Когда атрибут data-theme="light" */
+    [data-theme="light"] &__title {
       background-color: #D9D9D9;
     }
 

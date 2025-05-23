@@ -1,9 +1,9 @@
 import {images} from "../utils/themeContext.jsx";
 
-export default function LiBulletPoint({name, children}) {
+export default function LiBulletPoint({imageKey, children}) {
     return (
         <li>
-            <img className="bullet-point" src={images.static[name]} alt=""/>
+            <img className="bullet-point" src={images.static[imageKey]} alt=""/>
             {children}
         </li>
     )

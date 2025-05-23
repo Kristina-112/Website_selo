@@ -1,0 +1,45 @@
+.tab {
+  &__content {
+    width: 55%;
+  }
+
+  &__list {
+    font-weight: 500;
+
+    p {
+      padding: 0.2rem 0;
+      border-bottom: 2px solid var(--shadow);
+    }
+
+    span {
+      font-size: 1rem;
+      font-weight: normal;
+    }
+  }
+}
+
+.floor-plan {
+  display: grid;
+  grid-template:
+    "img1 img2"
+    "lst1 lst2"
+    / 1fr 1fr;
+
+  &__list {
+    p {
+      padding: 0.2rem 0;
+      border-bottom: 2px solid var(--shadow);
+    }
+
+    &_invisible {
+      display: none;
+    }
+
+    &_visible {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+  }
+}

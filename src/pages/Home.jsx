@@ -73,10 +73,10 @@ const Home = () => {
                             проведенное здесь, наполняло Вас живительной силой природы.</p>
                     </div>
                     <ul>
-                        <LiBulletPoint name="plant">
+                        <LiBulletPoint imageKey="plant">
                             <span>Поселок окружен лесом с преимущественно хвойными породами деревьев</span>
                         </LiBulletPoint>
-                        <LiBulletPoint name="plant">
+                        <LiBulletPoint imageKey="plant">
                             <span>Внутри поселка есть природное озеро с благоустроенной территорией для Вашего комфортного отдыха</span>
                         </LiBulletPoint>
                     </ul>
@@ -241,14 +241,14 @@ const Home = () => {
                 <ContentGrid layout="half">
                     <ul>
                         {infrastructure.slice(0, 7).map((text) =>
-                            <LiBulletPoint name="check">
+                            <LiBulletPoint imageKey="check">
                                 <span>{text}</span>
                             </LiBulletPoint>
                         )}
                     </ul>
                     <ul>
                         {infrastructure.slice(7, 14).map((text) =>
-                            <LiBulletPoint name="check">
+                            <LiBulletPoint imageKey="check">
                                 <span>{text}</span>
                             </LiBulletPoint>
                         )}

@@ -1,0 +1,107 @@
+.house {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding-top: 120px;
+  width: 80%;
+
+  &__header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0.5rem 0;
+  }
+
+  &__link-back {
+    position: absolute;
+    left: -5.5rem;
+    padding: 0 0.5rem;
+    border-radius: 50px;
+    font-size: 3rem;
+    color: var(--green);
+    opacity: 0.8;
+    cursor: pointer;
+    transition: background-color 0.2s;
+
+    &:hover {
+      background-color: var(--shadow);
+      opacity: 1;
+    }
+  }
+
+  &__pricing {
+    display: flex;
+    flex-direction: column;
+    text-align: end;
+  }
+
+  &__gallery {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    border-radius: 1rem;
+  }
+
+  &__contacts {
+    position: fixed;
+    right: 2rem;
+    bottom: 6rem;
+    width: fit-content;
+    padding: 1rem;
+    border-radius: 1.5rem;
+    background-color: var(--label);
+    cursor: pointer;
+    transition: transform 0.2s ease-out;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__tabs {
+    display: flex;
+    gap: 2rem;
+    width: fit-content;
+    margin: 2rem 0;
+    border-bottom: 4px solid var(--shadow);
+  }
+
+  &__tab {
+    border-radius: 0 !important;
+    margin-bottom: -4px;
+    font-size: 1.25rem;
+    opacity: 0.5;
+    cursor: pointer;
+    transition: color 0.2s, opacity 0.2s;
+  }
+
+  &__tab_active {
+    border-bottom: 4px solid #4078B0;
+    color: #4078B0FF;
+    opacity: 1;
+  }
+
+  &__text {
+    font-size: 1.2rem;
+
+    &_title {
+      font-size: 2rem;
+      font-weight: 500;
+    }
+
+    &_caption {
+      font-size: 1rem;
+      opacity: 0.7;
+    }
+
+    &_bold {
+      font-weight: 700;
+    }
+  }
+
+  &__image {
+    border-radius: 1rem;
+  }
+}

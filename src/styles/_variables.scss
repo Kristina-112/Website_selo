@@ -1,7 +1,8 @@
 [data-theme="light"] {
   --bg: #fff;
   --text: #000;
-  --shadow: #f5f5f5;
+  --shadow: #eeeeee;
+  --shadow-darker: #f0f0f0;
 
   --h2: #ffcc85;
   --label: #87b9ef;
@@ -12,7 +13,8 @@
 [data-theme="dark"] {
   --bg: #262322;
   --text: #fff;
-  --shadow: #4a4545;
+  --shadow: #3a3636;
+  --shadow-darker: #4b4545;
 
   //--h2: #5f3337;
   //--label: #415f81;
@@ -20,8 +22,8 @@
   //--green: #325342;
 
   --h2: #ffa21f;
-  --label: #87b9ef;
+  --label: #4078b0;
   --highlight-text: #745e2e;;
-  --green: #aad133;
+  --green: #566a19;
 }
 

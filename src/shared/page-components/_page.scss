@@ -128,7 +128,7 @@
 
     p {
       padding: 0.2rem 0;
-      border-radius: 1.5rem;
+      border-radius: 1rem;
     }
 
     li {
@@ -162,7 +162,7 @@
 
   &__image {
     max-width: 100%;
-    border-radius: 20px;
+    border-radius: 1rem;
     //object-fit: contain;
   }
 }
@@ -178,13 +178,13 @@
 .shadowed {
   flex-grow: 1;
   padding: 1rem !important;
-  border-radius: 1.5rem;
-  background: var(--shadow);
+  border-radius: 1rem;
+  //background: var(--shadow);
+  box-shadow: 0 0 10px 2px var(--shadow);
 }
 
 .dotted {
   padding: 1rem !important;
   border: 5px dotted var(--green);
-  border-radius: 1.5rem;
 }
 

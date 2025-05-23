@@ -1,10 +1,11 @@
+import {Link} from 'react-router-dom'
 import {motion} from 'framer-motion'
 import {images} from '../utils/themeContext.jsx'
 
-const infoItems = [
-    {key: 'area', label: 'Общая площадь дома', unit: 'м²'},
-    {key: 'floor1', label: 'Площадь 1-го этажа', unit: 'м²'},
-    {key: 'floor2', label: 'Площадь 2-го этажа', unit: 'м²'},
+const rows = [
+    {key: 'total', label: 'Общая площадь дома', unit: ' м²'},
+    {key: 'floor1', label: 'Площадь 1-го этажа', unit: ' м²'},
+    {key: 'floor2', label: 'Площадь 2-го этажа', unit: ' м²'},
     {key: 'finish', label: 'Наружная отделка', unit: ''},
     {key: 'roof', label: 'Материал кровли', unit: ''},
 ]
@@ -12,16 +13,28 @@ const infoItems = [
 const cardVariants = {
     rest: {
         scale: 1,
-        backgroundColor: 'var(--shadow)'      // исходный светлый фон
+        backgroundColor: 'var(--shadow)',
     },
     hover: {
         scale: 1.02,
-        backgroundColor: '#f0f0f0'      // чуть более тёмный
+        backgroundColor: 'var(--shadow-darker)',
     }
-};
+}
 
 export default function Card({house, index, hoveredIndex, setHoveredIndex}) {
     const isActive = hoveredIndex === index
+
+    // Достаем только то, что нужно
+    const {slug, title, imageKeys: {photoKey}, area, finish, roof
+    } = house
+
+    const details = {
+        total: area.total,
+        floor1: area.floor1,
+        floor2: area.floor2,
+        finish,
+        roof
+    }
 
     return (
         <motion.div
@@ -39,36 +52,44 @@ export default function Card({house, index, hoveredIndex, setHoveredIndex}) {
         >
             <img
                 className="card__image"
-                src={images.static[house.imageKey]}
-                alt={house.title}
+                src={images.static[photoKey]}
+                alt={title}
             />
-            <p className="card__title">{house.title}</p>
+
+            <p className="card__title">{title}</p>
 
             <motion.div
                 className="card__info"
-                initial={{maxHeight: 0 }}
-                animate={isActive ? {maxHeight: 500 } : {maxHeight: 0 }}
+                initial={{maxHeight: 0}}
+                animate={isActive ? {maxHeight: 500} : {maxHeight: 0}}
                 transition={{
                     type: 'tween',
                     duration: 1,
                     ease: 'easeOut'
                 }}
             >
-                {infoItems.map(({key, label, unit}) => (
+                {rows.map(({key, label, unit}) => (
                     <div className="card__row" key={key}>
                         <p>{label}</p>
-                        <p>{house[key]}{unit}</p>
+                        <p>
+                            {details[key]}
+                            {unit}
+                        </p>
                     </div>
                 ))}
 
-                <a className="card__link">
+                <Link
+                    className="card__link"
+                    to={`/house-plans/${slug}`}
+                    onClick={() => setHoveredIndex(null)}
+                >
                     <img
                         className="bullet-point"
                         src={images.static.more}
                         alt="подробнее"
                     />
                     Читать подробнее
-                </a>
+                </Link>
             </motion.div>
         </motion.div>
     )

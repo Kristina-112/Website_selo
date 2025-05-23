@@ -5,8 +5,10 @@ import useResetScroll from "./utils/useResetScroll";
 
 import PageLayout from "./layout/PageLayout";
 import Home from "./pages/Home.jsx";
+import HousePlans from "./pages/house-plans/HousePlans.jsx";
+import HouseInfo from "./pages/house-plans/HouseInfo.jsx";
+import MasterPlan from "./pages/MasterPlan.jsx";
 import Documents from "./pages/Documents.jsx";
-import HousePlans from "./pages/HousePlans.jsx";
 
 function App() {
     useResetScroll();
@@ -23,7 +25,16 @@ function App() {
                <PageLayout content={<HousePlans/>} />
             } />
 
-            <Route path="/news" element={
+            <Route
+                path="/house-plans/:houseId"
+                element={<PageLayout content={<HouseInfo/>}/>}
+            />
+
+            <Route path="/master-plan" element={
+                <PageLayout content={<MasterPlan/>}/>
+            }/>
+
+            <Route path="/documents" element={
                <PageLayout content={<Documents/>} />
             } />
 
