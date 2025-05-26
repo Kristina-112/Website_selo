@@ -5,47 +5,10 @@ const FloorPlan = ({plan1Key, plan2Key, slug}) => {
         <div className="floor-plan">
             <img src={images.static[plan1Key]} alt=""/>
             <img src={images.static[plan2Key]} alt=""
-                     onClick={() => console.log(slug)}/>
+                 onClick={() => console.log(slug)}/>
 
-            <div className={`floor-plan__list_invisible ${slug === 'kd-001' ? 'floor-plan__list_visible' : ''} mt-3`}>
-
-                <div className="floor-plan__list shadowed">{
-                    [
-                        {title: "Гостиная", area: "26,6"},
-                        {title: "Кухня-столовая", area: "11,4"},
-                        {title: "Спальня", area: "11,4"},
-                        {title: "Бойлерная", area: "6,3"},
-                        {title: "Лестничный холл", area: "9,84"},
-                        {title: "Санузел", area: "3,78"},
-                        {title: "Тамбур", area: "4,5"},
-                        {title: "Терраса", area: "26"},
-                        {title: "Крыльцо", area: "4,16"}
-                    ].map(({title, area}, index) =>
-                        <p>{index + 1}. {title}
-                            <span>  {area}м²</span>
-                        </p>)
-                }
-                </div>
-
-                <div className="floor-plan__list shadowed ml-5">
-                    {
-                        [
-                            {title: "Спальня", area: "19,0"},
-                            {title: "Спальня", area: "19,0"},
-                            {title: "Спальня", area: "11,4"},
-                            {title: "Кабинет", area: "11,4"},
-                            {title: "Лестничный холл", area: "9,84"},
-                            {title: "Санузел", area: "3,78"},
-                        ].map(({title, area}, index) =>
-                            <p>{index + 1}. {title}
-                                <span>  {area}м²</span>
-                            </p>)
-                    }
-                </div>
-            </div>
 
             <div className={`floor-plan__list_invisible ${slug === 'kd-003' ? 'floor-plan__list_visible' : ''} mt-3`}>
-
                 <div className="floor-plan__list shadowed">{
                     [
                         {title: "Гостиная", area: "28,3"},
@@ -64,7 +27,7 @@ const FloorPlan = ({plan1Key, plan2Key, slug}) => {
                 }
                 </div>
 
-                <div className="floor-plan__list shadowed ml-5">
+                <div className="floor-plan__list shadowed">
                     {
                         [
                             {title: "Спальня", area: "20,6"},
@@ -83,6 +46,43 @@ const FloorPlan = ({plan1Key, plan2Key, slug}) => {
                     }
                 </div>
             </div>
+
+            <div className={`floor-plan__list_invisible ${slug === 'kd-001' ? 'floor-plan__list_visible' : ''} mt-3`}>
+                <div className="floor-plan__list shadowed">{
+                    [
+                        {title: "Гостиная", area: "26,6"},
+                        {title: "Кухня-столовая", area: "11,4"},
+                        {title: "Спальня", area: "11,4"},
+                        {title: "Бойлерная", area: "6,3"},
+                        {title: "Лестничный холл", area: "9,84"},
+                        {title: "Санузел", area: "3,78"},
+                        {title: "Тамбур", area: "4,5"},
+                        {title: "Терраса", area: "26"},
+                        {title: "Крыльцо", area: "4,16"}
+                    ].map(({title, area}, index) =>
+                        <p>{index + 1}. {title}
+                            <span>  {area}м²</span>
+                        </p>)
+                }
+                </div>
+
+                <div className="floor-plan__list shadowed">
+                    {
+                        [
+                            {title: "Спальня", area: "19,0"},
+                            {title: "Спальня", area: "19,0"},
+                            {title: "Спальня", area: "11,4"},
+                            {title: "Кабинет", area: "11,4"},
+                            {title: "Лестничный холл", area: "9,84"},
+                            {title: "Санузел", area: "3,78"},
+                        ].map(({title, area}, index) =>
+                            <p>{index + 1}. {title}
+                                <span>  {area}м²</span>
+                            </p>)
+                    }
+                </div>
+            </div>
+
         </div>
     )
 }

@@ -2,9 +2,11 @@ import {createContext, useState, useEffect} from 'react';
 
 // theme dependent
 import sun from '../assets/icons-theme-dependent/sun.png';
-import moon from '../assets/icons-theme-dependent/moon.png';
-import arrow_w from '../assets/icons-theme-dependent/arrow-white.png';
-import arrow_b from '../assets/icons-theme-dependent/arrow-black.png';
+import moon from '../assets/icons-theme-dependent/moon.png'
+import menu_b from '../assets/icons-theme-dependent/menu-black.png';
+import menu_w from '../assets/icons-theme-dependent/menu-white.png';
+import arrow_down_w from '../assets/icons-theme-dependent/arrow-white.png';
+import arrow_down_b from '../assets/icons-theme-dependent/arrow-black.png';
 import download_w from '../assets/icons-theme-dependent/download-white.png';
 import download_b from '../assets/icons-theme-dependent/download-black.png';
 import phone_w from '../assets/icons-theme-dependent/phone-white.png';
@@ -67,6 +69,24 @@ import rublevka59_plan2 from '../assets/house-plans/rublevka59-plan2.jpg';
 import zodchiy61 from '../assets/house-plans/zodchiy61.jpg';
 import zodchiy61_plan1 from '../assets/house-plans/zodchiy61-plan1.jpg';
 import zodchiy61_plan2 from '../assets/house-plans/zodchiy61-plan2.jpg';
+import master_plan from '../assets/master-plan/master-plan.jpg'
+
+// gallery
+import photo1 from '../assets/gallery/1.jpg';
+import photo2 from '../assets/gallery/2.jpg';
+import photo3 from '../assets/gallery/3.jpg';
+import photo4 from '../assets/gallery/4.jpg';
+import photo5 from '../assets/gallery/5.jpg';
+import photo6 from '../assets/gallery/6.jpg';
+import photo7 from '../assets/gallery/7.jpg';
+import photo8 from '../assets/gallery/8.jpg';
+import photo9 from '../assets/gallery/9.jpg';
+import photo10 from '../assets/gallery/10.jpg';
+import photo11 from '../assets/gallery/11.jpg';
+import photo12 from '../assets/gallery/12.jpg';
+import photo13 from '../assets/gallery/13.jpg';
+import photo14 from '../assets/gallery/14.jpg';
+import photo15 from '../assets/gallery/15.jpg';
 
 export const images = {
     static: {
@@ -94,19 +114,26 @@ export const images = {
         noginsk57: noginsk57, noginsk57_plan1: noginsk57_plan1, noginsk57_plan2: noginsk57_plan2,
         rublevka59: rublevka59, rublevka59_plan1: rublevka59_plan1, rublevka59_plan2: rublevka59_plan2,
         zodchiy61: zodchiy61, zodchiy61_plan1: zodchiy61_plan1, zodchiy61_plan2: zodchiy61_plan2,
+        master_plan: master_plan,
+
+        photos: {
+            photo1: photo1, photo2: photo2, photo3: photo3, photo4: photo4, photo5: photo5,
+            photo6: photo6, photo7: photo7, photo8: photo8, photo9: photo9, photo10: photo10,
+            photo11: photo11, photo12: photo12, photo13: photo13, photo14: photo14, photo15: photo15,
+        }
     },
 
     light: {
-        theme: moon,
-        arrow: arrow_b,
+        theme: moon, menu: menu_b,
+        arrow_down: arrow_down_b,
         download: download_b,
         phone: phone_b, email: email_b,
         delivery: delivery_b, unload: unload_b, assemble: assemble_b, moscow: moscow_b,
     },
 
     dark: {
-        theme: sun,
-        arrow: arrow_w,
+        theme: sun, menu: menu_w,
+        arrow_down: arrow_down_w,
         download: download_w,
         phone: phone_w, email: email_w,
         delivery: delivery_w, unload: unload_w, assemble: assemble_w, moscow: moscow_w,

@@ -4,6 +4,10 @@
   margin-left: 1rem;
   gap: 1rem;
 
+  @media (max-width: 600px) {
+    margin-left: 0;
+  }
+
   .document {
     display: flex;
     align-items: center;
@@ -14,6 +18,16 @@
     img {
       height: 3rem;
       margin-right: 1rem;
+    }
+
+    &__title {
+      display: flex;
+      flex-direction: column;
+      margin-right: 1rem;
+
+      @media (max-width: 600px) {
+        font-size: 1.1rem;
+      }
     }
 
     &__date {

@@ -1,10 +1,33 @@
+@media (max-width: 768px) {
+  .house-plans .title {
+    display: none;
+  }
+}
+
+.house-plans {
+}
+
 .cards {
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
 
+  // к каждому .cards__column применится своя ширина:
   &__column {
     display: flex;
     flex-direction: column;
+    // ширина = 100% / количество колонок
+    width: calc(100% / var(--cols));
+  }
+
+  // мобильный
+  @media (max-width: 650px) {
+    flex-direction: column;
+
+
+    &__column {
+      width: 100%;
+      align-items: center;
+    }
   }
 
   .card {
@@ -31,7 +54,6 @@
       border-radius: 1rem;
       font-size: 1.1rem;
       font-weight: 600;
-
     }
 
     [data-theme="dark"] &__title {
@@ -39,7 +61,6 @@
 
     }
 
-    /* Когда атрибут data-theme="light" */
     [data-theme="light"] &__title {
       background-color: #D9D9D9;
     }

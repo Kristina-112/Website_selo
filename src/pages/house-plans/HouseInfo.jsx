@@ -30,7 +30,6 @@ const HouseInfo = () => {
                 <h1 className="house__text_title">
                     Проект дома<br/>
                     <span className="house__text_bold">{title}</span>
-
                 </h1>
 
                 <div className="house__pricing">

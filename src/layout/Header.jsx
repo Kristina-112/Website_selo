@@ -1,6 +1,14 @@
-import {useContext, useEffect, useState} from 'react';
+import {useContext, useEffect, useState, useRef} from 'react';
 import {Link} from 'react-router-dom';
 import {images, ThemeContext} from '../utils/themeContext.jsx'
+
+const links = [
+    {title: 'Главная', path: '/'},
+    {title: 'Планы домов', path: '/house-plans'},
+    {title: 'Генеральный план', path: '/master-plan'},
+    {title: 'Галерея', path: '/gallery'},
+    {title: 'Документы', path: '/documents'},
+]
 
 export default function Header() {
     const {theme, handleThemeChange} = useContext(ThemeContext);
@@ -15,10 +23,23 @@ export default function Header() {
         return () => window.removeEventListener("scroll", onScroll);
     }, []);
 
+    const [openMenu, setOpenMenu] = useState(false);
+    const menuRef = useRef(null);
+
+    useEffect(() => {
+        function onClickOutside(e) {
+            if (menuRef.current && !menuRef.current.contains(e.target)) {
+                setOpenMenu(false);
+            }
+        }
+
+        document.addEventListener('mousedown', onClickOutside);
+        return () => document.removeEventListener('mousedown', onClickOutside);
+    }, []);
 
     return (
-        <header className={`navbar ${scrolled ? "small" : ""}`}>
-            <Link to="/" className='navbar_logo'>
+        <header className={`navbar ${scrolled ? "navbar_small" : ""}`}>
+            <Link to="/" className='navbar__logo'>
                 <img src={images.static.logo} alt="logo"/>
                 <div>
                     <h2>Заповедное</h2>
@@ -26,28 +47,47 @@ export default function Header() {
                 </div>
             </Link>
 
-            <div className="nav_items">
-                <Link className="nav_item" to="/">
-                    О нас
-                </Link>
-                <Link className="nav_item" to="/house-plans">
-                    Проекты домов
-                </Link>
-                <Link className="nav_item" to="/master-plan">
-                    Ген. план
-                </Link>
-                <Link className="nav_item" to="">
-                    Галерея
-                </Link>
-                <Link className="nav_item" to="/documents">
-                    Документы
-                </Link>
+            <div className="navbar__items">
+                {
+                    links.map(({title, path}, index) => (
+                        <Link className="navbar__item" key={index} to={path}>
+                            {title}
+                        </Link>
+                    ))
+                }
             </div>
 
-            <img className="navbar_theme"
+            <img className="navbar__theme"
                  onClick={handleThemeChange}
                  src={images[theme].theme} alt="сменить тему"/>
-            <div className='contacts d-column'>
+
+            <div className="navbar__menu" ref={menuRef}>
+                <img className="bullet-point"
+                     src={images[theme].menu}
+                     onClick={() => setOpenMenu(open => !open)}
+                     alt="меню"/>
+                {openMenu && (
+                    <div className="navbar__dropdown">
+                        {links.map(link => (
+                            <Link
+                                key={link.path}
+                                to={link.path}
+                                className="navbar__dropdown-link"
+                                onClick={() => setOpenMenu(false)} // закрыть при выборе
+                            >
+                                {link.title}
+                            </Link>
+                        ))}
+                        <div className="navbar__dropdown-contacts">
+                            <p>+7 495 724 28 98</p>
+                            <p>zapovednoe07@mail.ru</p>
+                        </div>
+                    </div>
+                )}
+
+            </div>
+
+            <div className='navbar__contacts d-column'>
                 <p>+7 495 724 28 98</p>
                 <p>zapovednoe07@mail.ru</p>
             </div>

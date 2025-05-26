@@ -3,7 +3,7 @@ export function BasicSet() {
         <div>
             <p className="section__heading section__heading_level-2 d-column">
                 Дом из бруса 6 х 9м
-                <span className="house__text_bold">с выносом отрытой терасы 2 x 3м</span>
+                <p className="house__text">с выносом отрытой терасы<br className="house__text_break"/> 2 x 3м</p>
             </p>
 
             <div className="tab__list shadowed">

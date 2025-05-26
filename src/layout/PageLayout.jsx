@@ -4,7 +4,7 @@ import ScrollTopButton from "../shared/ScrollTopButton.jsx";
 
 const PageLayout = ({ content }) => {
     return (
-        <div style={{display: 'flex', flexDirection: 'column', minHeight: '100vh'}}>
+        <div className="layout">
             <Header />
             {content}
             <ScrollTopButton/>

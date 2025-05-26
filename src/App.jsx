@@ -8,6 +8,7 @@ import Home from "./pages/Home.jsx";
 import HousePlans from "./pages/house-plans/HousePlans.jsx";
 import HouseInfo from "./pages/house-plans/HouseInfo.jsx";
 import MasterPlan from "./pages/MasterPlan.jsx";
+import Gallery from "./pages/Gallery.jsx";
 import Documents from "./pages/Documents.jsx";
 
 function App() {
@@ -32,6 +33,10 @@ function App() {
 
             <Route path="/master-plan" element={
                 <PageLayout content={<MasterPlan/>}/>
+            }/>
+
+            <Route path="/gallery" element={
+                <PageLayout content={<Gallery/>}/>
             }/>
 
             <Route path="/documents" element={

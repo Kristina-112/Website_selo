@@ -9,7 +9,6 @@ import Highlight from "../shared/page-components/Highlight.jsx";
 import LiBulletPoint from "../shared/LiBulletPoint.jsx";
 import TableOfContents from "../shared/TableOfContents.jsx";
 
-
 const Home = () => {
     const {theme} = useContext(ThemeContext);
     const [showContents, setShowContents] = useState(false);
@@ -17,13 +16,13 @@ const Home = () => {
     return (
         <PageWrapper pageClass="home" title="О нас">
             <div className="toc">
-                <nav className="toc__nav">
+                <nav className="toc__header">
                     <h1 className="title">ЗАПОВЕДНОЕ<br/>дачный посёлок</h1>
                     <img
                         className={clsx('toc__arrow',
                             showContents && 'toc__arrow_rotated'
                         )}
-                        src={images[theme].arrow}
+                        src={images[theme].arrow_down}
                         alt="открыть содержание"
                         onClick={() => setShowContents(v => !v)}
                     />
@@ -35,8 +34,7 @@ const Home = () => {
                 <ContentGrid layout="thirds">
                     <p>
                         Дачный поселок «Заповедное» находится в <Highlight>
-                        88 км от Москвы, по Ярославскому или Щелковскому шоссе</Highlight>
-                        рядом с деревней Малое Каринское, Александровского района Владимирской области.
+                        88 км от Москвы, по Ярославскому или Щелковскому шоссе</Highlight> рядом с деревней Малое Каринское, Александровского района Владимирской области.
                     </p>
                     <div className="d-column">
                         <div className="content__label">
@@ -113,7 +111,6 @@ const Home = () => {
                 <ContentGrid layout="thirds">
                     <img className="content__image"
                          src={images.static.forest}
-                         style={{maxHeight: '30vw'}}
                          alt="Костромской лес"/>
                     <p>
                         Строительство деревянных домов на Руси популярно испокон веков.<br/>
@@ -162,14 +159,13 @@ const Home = () => {
                                     "Стены дома", "Внутренние перегородки", "Стропильная система", "Обрешетка крыши",
                                     "Лаги пола и потолка", "Черновой пол", "Перекрытие потолка", "Обшивка фронтонов",
                                 ].map((item, index) =>
-                                    <LiBulletPoint name="check" key={index}>
+                                    <LiBulletPoint imageKey="check" key={index}>
                                         <span>{item}</span>
                                     </LiBulletPoint>)
                             }
 
                         </ul>
-                        <p>Даже с помощью перечисленных выше компонентов можно построить деревянный дом, что называется
-                            <Highlight> «без единого гвоздя»</Highlight>.
+                        <p>Даже с помощью перечисленных выше компонентов можно построить деревянный дом, что называется <Highlight>«без единого гвоздя»</Highlight>.
                         </p>
                     </div>
                 </ContentGrid>

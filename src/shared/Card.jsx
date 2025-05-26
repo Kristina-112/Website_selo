@@ -24,7 +24,6 @@ const cardVariants = {
 export default function Card({house, index, hoveredIndex, setHoveredIndex}) {
     const isActive = hoveredIndex === index
 
-    // Достаем только то, что нужно
     const {slug, title, imageKeys: {photoKey}, area, finish, roof
     } = house
 

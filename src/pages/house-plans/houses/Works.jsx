@@ -12,7 +12,7 @@ export default function Works() {
                 {title: "Сборка на участке заказчика", imageKey: "assemble"},
                 {title: "Доставка по Московской области", imageKey: "moscow"},
             ].map(({title, imageKey}) => (
-                <li key={imageKey}>
+                <li className="d-flex ai-center" key={imageKey}>
                     <img className="bullet-point mb-1"
                          src={images[theme][imageKey]}
                          style={{width: '3rem', height: 'auto'}}

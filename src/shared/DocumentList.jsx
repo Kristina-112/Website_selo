@@ -9,7 +9,7 @@ const DocumentList = ({documents}) => {
             {documents.slice().reverse().map(({title, date, path}, index) => (
                 <div key={index} className="document">
                     <img src={images.static.file}/>
-                    <div className="d-column mr-2">
+                    <div className="document__title d-column mr-2">
                         <p>{title}</p>
                         <p className="document__date">{date}</p>
                     </div>

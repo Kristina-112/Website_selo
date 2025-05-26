@@ -11,7 +11,7 @@ const FilterByCategory = () => {
             : documents.filter((doc) => doc.type === selectedType);
 
     return (
-        <div className="d-flex mt-5">
+        <div className="documents__container">
             <div className="filter">
                 {filters.map(({attribute, text}) => (
                     <label className="radio-button" htmlFor={attribute} key={attribute}>

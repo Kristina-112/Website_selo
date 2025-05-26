@@ -1,3 +1,12 @@
+.documents__container {
+  display: flex;
+  margin-top: 2rem;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+  }
+}
+
 .filter {
   position: sticky;
   top: 5rem;
@@ -8,6 +17,12 @@
   padding: 1rem;
   border-radius: 1.5rem;
   background-color: var(--shadow);
+
+  @media (max-width: 600px) {
+    position: static;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
 
   .radio-button {
     position: relative;
