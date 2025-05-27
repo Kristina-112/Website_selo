@@ -1,3 +1,7 @@
+/*
+ * Подвал страницы
+*/
+
 export default function Footer() {
     return(
     <>

@@ -1,3 +1,6 @@
+/*
+ * Базовый комплект проекта Кострома 53.
+ */
 export function BasicSet() {
     return (
         <div>

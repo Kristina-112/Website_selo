@@ -1,3 +1,11 @@
+/**
+ * Компонент главной страницы "О нас".
+ * Отображает:
+ *  - Заголовок с навигацией по содержанию (TableOfContents).
+ *  - Секции с информацией: Расположение, Описание, Строительство, Производство стройматериалов,
+ *    Материалы для отделки, Инфраструктура посёлка, Окружение.
+ */
+
 import {useState, useContext} from 'react';
 import clsx from 'clsx';
 import {images, ThemeContext} from '../utils/themeContext.jsx';
@@ -15,6 +23,7 @@ const Home = () => {
 
     return (
         <PageWrapper pageClass="home" title="О нас">
+            {/* Блок оглавления с переключаемым отображением */}
             <div className="toc">
                 <nav className="toc__header">
                     <h1 className="title">ЗАПОВЕДНОЕ<br/>дачный посёлок</h1>

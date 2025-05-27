@@ -1,7 +1,7 @@
 $spacer: 1rem !default; // базовый шаг (1rem)
 $spacer-scale: 0.6 !default; // масштаб (каждый шаг — 0.25rem)
 
-// margin
+// === margin ===
 @for $i from 0 through 5 {
   .m-#{$i} {
     margin: $i * $spacer * $spacer-scale;
@@ -28,7 +28,10 @@ $spacer-scale: 0.6 !default; // масштаб (каждый шаг — 0.25rem)
   }
 }
 
-// padding
+.mr-auto { margin-right: auto !important; }
+.ml-auto { margin-left: auto !important; }
+
+// === padding ===
 @for $i from 0 through 5 {
   .p-#{$i} {
     padding: $i * $spacer * $spacer-scale;
@@ -55,16 +58,9 @@ $spacer-scale: 0.6 !default; // масштаб (каждый шаг — 0.25rem)
   }
 }
 
-// Например, me-auto (margin-end auto)
-.mr-auto {
-  margin-right: auto !important;
-}
 
-.ml-auto {
-  margin-left: auto !important;
-}
 
-// flex
+// === flex ===
 .d-flex {
   display: flex;
   flex-direction: row;
@@ -75,51 +71,23 @@ $spacer-scale: 0.6 !default; // масштаб (каждый шаг — 0.25rem)
   flex-direction: column;
 }
 
-.flex-grow-1 {
-  flex-grow: 1;
-}
+.flex-grow-1 { flex-grow: 1; }
 
-// text
-.ta-center {
-  text-align: center;
-}
+// === text ===
+.ta-center {text-align: center; }
 
-// items
-.ji-center {
-  justify-items: center;
-}
+// === items ===
+.ji-center { justify-items: center; }
+.ai-center { align-items: center; }
 
-.ai-center {
-  align-items: center;
-}
+// === self ===
+.js-start { justify-self: start; }
+.as-start { align-self: start; }
+.js-end { justify-self: end; }
+.as-end { align-self: end; }
+.js-center { justify-self: center; }
+.as-center { align-self: center;  }
 
-// self
-.js-start {
-  justify-self: start;
-}
-
-.as-start {
-  align-self: start;
-}
-
-.js-end {
-  justify-self: end;
-}
-
-.as-end {
-  align-self: end;
-}
-
-.js-center {
-  justify-self: center;
-}
-
-.as-center {
-  align-self: center;
-}
-
-.width-100 {
-  width: 100%;
-}
+.width-100 { width: 100%; }
 
 

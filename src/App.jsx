@@ -1,9 +1,13 @@
 import {Route, Routes} from 'react-router-dom';
 
+// сборник стилей
 import './styles/styles.sass'
+// сброс прокрутки
 import useResetScroll from "./utils/useResetScroll";
 
+// макет страницы
 import PageLayout from "./layout/PageLayout";
+// страницы
 import Home from "./pages/Home.jsx";
 import HousePlans from "./pages/house-plans/HousePlans.jsx";
 import HouseInfo from "./pages/house-plans/HouseInfo.jsx";
@@ -15,7 +19,7 @@ function App() {
     useResetScroll();
 
     return (
-
+        // навигация
         <Routes>
 
             <Route path="/" element={

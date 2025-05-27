@@ -1,3 +1,11 @@
+/**
+ * Компонент карточки проекта дома.
+ * Принимает props:
+ *  - house: объект с данными проекта (slug, title, imageKeys.photoKey, area, finish, roof).
+ *  - index: индекс этой карточки в списке.
+ *  - hoveredIndex: индекс карточки, над которой в данный момент наведен курсор.
+ *  - setHoveredIndex: функция для установки hoveredIndex при наведении/уборе курсора.
+ */
 import {Link} from 'react-router-dom'
 import {motion} from 'framer-motion'
 import {images} from '../utils/themeContext.jsx'

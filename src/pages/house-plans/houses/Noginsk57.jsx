@@ -1,3 +1,6 @@
+/*
+ * Базовый комплект проекта Ногинск 57.
+ */
 export function BasicSet() {
     return (
         <div>

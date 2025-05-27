@@ -1,4 +1,9 @@
+/*
+ * Стили для страницы «Проекты домов».
+ */
+
 @media (max-width: 768px) {
+  /* Скрываем заголовок на узких экранах */
   .house-plans .title {
     display: none;
   }
@@ -11,7 +16,7 @@
   display: flex;
   flex-wrap: wrap;
 
-  // к каждому .cards__column применится своя ширина:
+  // Каждой колонке задаётся ширина через CSS-переменную --cols
   &__column {
     display: flex;
     flex-direction: column;
@@ -19,10 +24,9 @@
     width: calc(100% / var(--cols));
   }
 
-  // мобильный
+  /* Мобильная адаптация: одна колонка */
   @media (max-width: 650px) {
     flex-direction: column;
-
 
     &__column {
       width: 100%;

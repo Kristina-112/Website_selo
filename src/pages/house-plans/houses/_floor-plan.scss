@@ -1,12 +1,13 @@
+/*
+ * Стили для компонента FloorPlan.
+ * Отображают поэтажные планы и списки помещений.
+ * Адаптивная верстка: grid для больших экранов, flex для мобильных.
+ */
 .floor-plan {
   &__list {
     p {
       padding: 0.2rem 0;
       border-bottom: 2px solid var(--shadow);
-    }
-
-    &_invisible {
-      display: none;
     }
   }
 }
@@ -14,15 +15,13 @@
 @media (min-width: 768px) {
   .floor-plan {
     display: grid;
+    gap: 1rem;
     grid-template:
     "img1 img2"
     "lst1 lst2"
     / 1fr 1fr;
 
-  &__list_visible {
-      grid-column: 1 / -1;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+  &__list {
       gap: 1rem;
     }
   }
@@ -32,7 +31,7 @@
     display: flex;
     flex-direction: column;
 
-    &__list_visible {
+    &__list{
       display: flex;
       flex-direction: column;
       align-items: start;

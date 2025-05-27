@@ -1,3 +1,6 @@
+/*
+ * Базовый комплект проекта Москва 51.
+ */
 export function BasicSet() {
     return (
         <div>

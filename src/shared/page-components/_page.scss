@@ -1,5 +1,14 @@
-// PAGE WRAPPER
+/*
+ * Основной файл стилей приложения.
+ * Содержит стили для:
+ *  - PageWrapper (.page-wrapper)
+ *  - Заголовка (.title)
+ *  - Секций (.section)
+ *  - Контента (.content и его сетки)
+ *  - Декоративных классов (highlight, shadowed, dotted)
+ */
 
+// Стили PageWrapper: фоновое изображение и обёртка содержимого
 .page-wrapper {
   position: relative;
   aspect-ratio: 16/9;
@@ -53,8 +62,7 @@
 }
 
 
-// TITLE
-
+// Стили заголовка страниц
 .title {
   line-height: 1.2;
   font-weight: normal;
@@ -64,8 +72,7 @@
 }
 
 
-// SECTION
-
+// Стили секций
 .section {
   &__heading {
     position: relative;
@@ -136,10 +143,10 @@
   }
 }
 
-// CONTENT
 
+// Стили контента (.content)
 .content {
-  // GRID
+  /* Сетки для большого экрана (>= 1000px) */
   @media (min-width: 1000px) {
     &__grid {
       display: grid;
@@ -156,6 +163,7 @@
     }
   }
 
+  /* Сетки для экранов < 1000px: вертикальный список */
   @media (max-width: 999px) {
     &__grid {
       display: flex;

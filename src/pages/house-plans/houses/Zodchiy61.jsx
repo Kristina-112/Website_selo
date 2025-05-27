@@ -1,3 +1,6 @@
+/*
+ * Базовый комплект проекта Зодчий 61.
+ */
 export function BasicSet() {
     return (
         <div>

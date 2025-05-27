@@ -1,3 +1,7 @@
+/*
+ * Базовый комплект проекта Галич 76.
+ */
+
 export function BasicSet() {
     return (
         <div>

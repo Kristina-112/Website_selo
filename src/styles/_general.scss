@@ -1,8 +1,10 @@
+/*
+ * Базовые стили, сброс стилей по умолчанию.
+ */
+
 @import 'variables';
 
-*,
-*::before,
-*::after {
+*, *::before, *::after {
   box-sizing: border-box;
 }
 
@@ -44,6 +46,7 @@ hr {
 
 li { list-style: none; }
 
+// Контейнер макета страницы
 .layout {
   display: flex;
   flex-direction: column;

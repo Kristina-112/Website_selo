@@ -1,3 +1,6 @@
+/*
+ * Базовый комплект проекта Кд003.
+ */
 export function BasicSet() {
     return (
         <div>
@@ -24,5 +27,48 @@ export function BasicSet() {
                 </p>
             </div>
         </div>
+    )
+}
+
+export function FloorPlan() {
+    return (
+        <>
+            <div className="floor-plan__list shadowed">{
+                [
+                    {title: "Гостиная", area: "28,3"},
+                    {title: "Кухня-столовая", area: "19,1"},
+                    {title: "Холл", area: "20,8"},
+                    {title: "Бойлерная", area: "7,7"},
+                    {title: "Санузел", area: "8,8"},
+                    {title: "Гардероб", area: "7,3"},
+                    {title: "Тамбур", area: "6,2"},
+                    {title: "Веранда", area: "20,4"},
+                    {title: "Веранда", area: "14"}
+                ].map(({title, area}, index) =>
+                    <p>{index + 1}. {title}
+                        <span>  {area}м²</span>
+                    </p>)
+            }
+            </div>
+
+            <div className="floor-plan__list shadowed">
+                {
+                    [
+                        {title: "Спальня", area: "20,6"},
+                        {title: "Спальня", area: "11"},
+                        {title: "Спальня", area: "24,8"},
+                        {title: "Холл", area: "21,7"},
+                        {title: "Санузел", area: "9,6"},
+                        {title: "Санузел", area: "8,6"},
+                        {title: "Веранда", area: "12,8"},
+                        {title: "Веранда", area: "14"},
+                        {title: "Балкон", area: "7,4"}
+                    ].map(({title, area}, index) =>
+                        <p>{index + 1}. {title}
+                            <span>  {area}м²</span>
+                        </p>)
+                }
+            </div>
+        </>
     )
 }

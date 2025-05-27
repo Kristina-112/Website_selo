@@ -1,20 +1,24 @@
+/**
+ * Шапка сайта.
+ * Содержит:
+ *  - Логотип и название проекта с ссылкой на главную страницу.
+ *  - Ссылки на основные разделы сайта.
+ *  - Кнопку переключения темы (светлая/тёмная).
+ *  - Адаптивное меню (иконка и выпадающий список) для мобильных устройств.
+ *  - Отображение контактов.
+ */
+
 import {useContext, useEffect, useState, useRef} from 'react';
 import {Link} from 'react-router-dom';
 import {images, ThemeContext} from '../utils/themeContext.jsx'
-
-const links = [
-    {title: 'Главная', path: '/'},
-    {title: 'Планы домов', path: '/house-plans'},
-    {title: 'Генеральный план', path: '/master-plan'},
-    {title: 'Галерея', path: '/gallery'},
-    {title: 'Документы', path: '/documents'},
-]
+import {links} from '../dataLists.js'
 
 export default function Header() {
     const {theme, handleThemeChange} = useContext(ThemeContext);
     const [scrolled, setScrolled] = useState(false);
 
     useEffect(() => {
+        // Отслежижвает прокрутку страницы и изменяет внешний вид шапки
         const onScroll = () => {
             setScrolled(window.scrollY > 300);
         };
@@ -27,6 +31,7 @@ export default function Header() {
     const menuRef = useRef(null);
 
     useEffect(() => {
+        // Закрытие выпадающего меню при клике вне его области
         function onClickOutside(e) {
             if (menuRef.current && !menuRef.current.contains(e.target)) {
                 setOpenMenu(false);

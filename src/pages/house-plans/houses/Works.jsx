@@ -1,3 +1,7 @@
+/**
+ * Отображает список выполняемых работ по проекту дома.
+ */
+
 import {useContext} from "react";
 import {images, ThemeContext} from "../../../utils/themeContext.jsx";
 

@@ -1,13 +1,23 @@
+/**
+ * Компонент страницы «Проекты домов».
+ *
+ * Отображает список карточек проектов домов в несколько колонок.
+ * Количество колонок адаптировано под ширину экрана.
+ * Подсвечивает карточку при наведении.
+ */
 import React, {useState, useEffect} from 'react'
 import PageWrapper from "../../shared/page-components/PageWrapper.jsx";
 import Card from "../../shared/Card.jsx";
 import {houses} from '../../dataLists.js'
 
 const HousePlans = () => {
-    // индекс выбранной карточки
+    // Индекс карточки, над которой наведён курсор
     const [hoveredIndex, setHoveredIndex] = useState(null)
 
-    // подсчет колонок
+    /**
+     * useColumnsCount — кастомный хук для расчёта числа колонок на основе ширины окна.
+     * Возвращает количество колонок: 1–4 в зависимости от breakpoints.
+     */
     function useColumnsCount() {
         const getCount = () => {
             const w = window.innerWidth;
@@ -34,6 +44,7 @@ const HousePlans = () => {
         <PageWrapper pageClass="house-plans" title="Проекты домов">
             <h1 className="title">ПРОЕКТЫ ДОМОВ</h1>
 
+            {/* Сетка карточек: колонки зависят от ширины экрана */}
             <div className="cards" style={{'--cols': columnsCount}}>
                 {cols.map(col => (
                     <div className="cards__column" key={col}>
@@ -55,28 +66,6 @@ const HousePlans = () => {
                     </div>
                 ))}
             </div>
-
-            {/*<div className="cards">*/}
-            {/*    {[0, 1, 2, 3].map(col => (*/}
-            {/*        <div className="cards__column" key={col}>*/}
-            {/*            {houses*/}
-            {/*                .filter((_, i) => i % 4 === col)*/}
-            {/*                .map((house, i) => {*/}
-            {/*                    const colIndex = i * 4 + col*/}
-            {/*                    return (*/}
-            {/*                        <Card*/}
-            {/*                            className="card__item"*/}
-            {/*                            key={colIndex}*/}
-            {/*                            house={house}*/}
-            {/*                            index={colIndex}*/}
-            {/*                            hoveredIndex={hoveredIndex}*/}
-            {/*                            setHoveredIndex={setHoveredIndex}*/}
-            {/*                        />*/}
-            {/*                    )*/}
-            {/*                })}*/}
-            {/*        </div>*/}
-            {/*    ))}*/}
-            {/*</div>*/}
             <hr/>
         </PageWrapper>
     )

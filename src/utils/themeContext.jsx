@@ -1,6 +1,8 @@
 import {createContext, useState, useEffect} from 'react';
 
-// theme dependent
+// -------------------------
+// Иконки, зависящие от темы
+// -------------------------
 import sun from '../assets/icons-theme-dependent/sun.png';
 import moon from '../assets/icons-theme-dependent/moon.png'
 import menu_b from '../assets/icons-theme-dependent/menu-black.png';
@@ -22,7 +24,9 @@ import assemble_b from '../assets/icons-theme-dependent/assemble-black.png';
 import moscow_w from '../assets/icons-theme-dependent/moscow-white.png';
 import moscow_b from '../assets/icons-theme-dependent/moscow-black.png';
 
-// icons
+// ------------------
+// Иконки, не зависящие от темы
+// ------------------
 import logo from '../assets/icons-static/logo.png';
 import plant from '../assets/about/plant.png';
 import check from '../assets/icons-static/check.png';
@@ -31,7 +35,9 @@ import train from '../assets/about/train.png';
 import file from '../assets/icons-static/file.png';
 import more from '../assets/icons-static/more.png';
 
-// about page images
+// --------------------
+// Изображения страницы «О нас»
+// --------------------
 import bg_home from '../assets/about/bg-home.png';
 import house_field from '../assets/about/house-field.png';
 import forest from '../assets/about/forest.png';
@@ -44,7 +50,10 @@ import log3 from '../assets/about/log3.jpg';
 import finish1 from '../assets/about/finish1.jpg';
 import finish2 from '../assets/about/finish2.jpg';
 
-// houses
+// --------------------
+// Изображения проектов домов
+// и соответствующих поэтажных планов
+// --------------------
 import galich76 from '../assets/house-plans/galich76.jpg';
 import galich76_plan1 from '../assets/house-plans/galich76-plan1.jpg';
 import galich76_plan2 from '../assets/house-plans/galich76-plan2.jpg';
@@ -71,7 +80,9 @@ import zodchiy61_plan1 from '../assets/house-plans/zodchiy61-plan1.jpg';
 import zodchiy61_plan2 from '../assets/house-plans/zodchiy61-plan2.jpg';
 import master_plan from '../assets/master-plan/master-plan.jpg'
 
-// gallery
+// --------------------
+// Галерея
+// --------------------
 import photo1 from '../assets/gallery/1.jpg';
 import photo2 from '../assets/gallery/2.jpg';
 import photo3 from '../assets/gallery/3.jpg';
@@ -90,22 +101,22 @@ import photo15 from '../assets/gallery/15.jpg';
 
 export const images = {
     static: {
+        // логотип и иконки
         logo: logo,
-
         plant: plant,
         check: check,
         car: car, train: train,
         file: file,
         more: more,
 
+        // изображения страницы «О нас»
         bg_home: bg_home,
-        house_field: house_field,
-        forest: forest,
-        house2: house2,
+        house_field: house_field, forest: forest, house2: house2,
         timber1: timber1, timber2: timber2,
         log1: log1, log2: log2, log3: log3,
         finish1: finish1, finish2: finish2,
 
+        // изображения проектов домов и планов
         galich76: galich76, galich76_plan1: galich76_plan1, galich76_plan2: galich76_plan2,
         kd001: kd001, kd001_plan1: kd001_plan1, kd001_plan2: kd001_plan2,
         kd003: kd003, kd003_plan1: kd003_plan1, kd003_plan2: kd003_plan2,
@@ -116,6 +127,7 @@ export const images = {
         zodchiy61: zodchiy61, zodchiy61_plan1: zodchiy61_plan1, zodchiy61_plan2: zodchiy61_plan2,
         master_plan: master_plan,
 
+        // изображения галереи
         photos: {
             photo1: photo1, photo2: photo2, photo3: photo3, photo4: photo4, photo5: photo5,
             photo6: photo6, photo7: photo7, photo8: photo8, photo9: photo9, photo10: photo10,

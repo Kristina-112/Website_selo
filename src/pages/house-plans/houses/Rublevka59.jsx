@@ -1,3 +1,6 @@
+/*
+ * Базовый комплект проекта Рублевка 59.
+ */
 export function BasicSet() {
     return (
         <div>

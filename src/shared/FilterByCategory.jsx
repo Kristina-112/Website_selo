@@ -1,3 +1,15 @@
+/**
+ * Компонент для фильтрации и отображения списка документов по выбранной категории.
+ *
+ * Импортирует:
+ *  - filters: массив объектов с атрибутами и текстом радио-кнопок для фильтрации,
+ *  - documents: массив объектов документов с полем type.
+ *
+ * Логика:
+ * 1. selectedType — состояние выбранного фильтра (по умолчанию "all").
+ * 2. filteredDocs — если selectedType === "all", показывает все документы,
+ *    иначе фильтрует по полю type.
+ */
 import {useState} from "react";
 import DocumentList from "./DocumentList.jsx";
 import {filters, documents} from "../dataLists.js";

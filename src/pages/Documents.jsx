@@ -1,5 +1,7 @@
-import {motion} from "framer-motion";
-import {images} from "../utils/themeContext.jsx";
+/**
+ * Компонент страницы "Документы".
+ * Отображает раздел с документами и фильтр по категориям.
+ */
 import FilterByCategory from "../shared/FilterByCategory.jsx";
 import PageWrapper from "../shared/page-components/PageWrapper.jsx";
 
